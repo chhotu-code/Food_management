@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const MongoDB = require("./db");
+require('dotenv').config();
 MongoDB();
 
 app.use((req, res, next) => {
