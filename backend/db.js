@@ -20,4 +20,9 @@ const MongoDB = async () => {
     }
 };
 
+const apiUrl = process.env.REACT_APP_API_URL;
+fetch(`${apiUrl}/api/fooditems`)
+    .then(response => response.json())
+    .then(data => console.log(data));
+
 module.exports = MongoDB;
