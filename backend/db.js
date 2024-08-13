@@ -20,14 +20,12 @@ const MongoDB = async () => {
     }
 };
 
-const apiUrl = process.env.REACT_APP_API_URL;
-fetch(`${apiUrl}/api/fooditems`)
-    .then(response => response.json())
-    .then(data => console.log(data));
+// const apiUrl = process.env.REACT_APP_API_URL;
+// fetch(`${apiUrl}/api/fooditems`)
+//     .then(response => response.json())
+//     .then(data => console.log(data));
 
-    const port = process.env.PORT || 5000;
-    app.listen(port, () => {
-        console.log(`Server running on port ${port}`);
-    });
+    
+    
 
 module.exports = MongoDB;

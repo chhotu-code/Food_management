@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const port = 5000;
 const MongoDB = require("./db");
 require('dotenv').config();
 MongoDB();
+
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -29,3 +31,18 @@ app.use('/api', require("./router/OrderData"));
 app.listen(port, () => {
     console.log(`${port} this port number is working...`);
 });
+
+// app.listen(port, () => {
+//     console.log(`Server running on port ${port}`);
+// });
+
+
+
+const corsOptions = {
+  origin: ['http://localhost:3000', 'https://food-management-aamu.vercel.app'], // Add your Vercel URL here
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
+
