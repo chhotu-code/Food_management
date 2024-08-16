@@ -12,8 +12,8 @@ const bcrypt = require('bcrypt')
 router.post(
   "/loginuser",
   [
-    body("email", "Incorrect Email").isEmail(),
-    body("password", "Incorrect password").isLength({ min: 5 }),
+    body("email", "Enter a valid Email").isEmail(),
+    body("password", "Password cannot be blank").isLength({ min: 5 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
