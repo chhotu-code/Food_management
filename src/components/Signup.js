@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+
 
 export default function Signup() {
     const [userData, setUserData] = useState({ name: "", email: "", password: "", location: "" });
+    let navigate = useNavigate();
 
     const handlerSubmit = async (e) => {
         e.preventDefault();
@@ -24,6 +26,8 @@ export default function Signup() {
         console.log(json.data);
         if (!json.success)
             alert("Please enter valid data");
+        else
+        navigate('/');
     }
 
     const onChange = (event) => {
